@@ -1,0 +1,32 @@
+{% include 'aayas_header.html'%}
+	<form method="post">
+		<center>
+			<h2>MESSAGE</h2>
+			<table class="table" style="width: 600px;">
+				<tr>
+					<th>Message</th>
+					<td><input type="text" name="msg" class="form-control" required></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="button" name="submit" value="SEND" class="btn btn-info"></td>
+				</tr>
+			</table>
+			<table class="table" style="width: 700px;">
+				<tr>
+					<th>Sl.no</th>
+					<th>Message</th>
+					<th>Reply</th>
+					<th>Date</th>
+				</tr>
+				{% for row in data['msg'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['message_description']}}</td>
+					<td>{{row['reply_description']}}</td>
+					<td>{{row['message_date']}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</center>
+	</form>
+{% include'footer.html' %}

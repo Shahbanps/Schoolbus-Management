@@ -1,0 +1,71 @@
+
+{% include 'adminheader.html'%}
+<html>
+<center>
+<head>
+
+</head>
+<body >
+	<form method="post">
+		<h1 style="color: white;">Assign Route</h1>
+		<table style="width: 500px;color: white;">
+			<tr>
+				<th>Select Route</th>
+				<td><br><select name="route_id" class="form-control" required="">
+								<option>--Select Route--</option>
+								{%for row in data['journey']%}
+								<option value="{{row['route_id']}}">{{row['route_name']}}</option>
+								{%endfor%}
+							</select></br></td>
+			</tr>
+			<tr>
+				<th>Select Driver</th>
+				<td><br><select name="driver_id" class="form-control" required="">
+								<option>--Select Driver--</option>
+								{%for row in data['driver']%}
+								<option value="{{row['driver_id']}}">{{row['first_name']}} {{row['last_name']}}</option>
+								{%endfor%}
+							</select></br></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" align="center"><br><input type="submit" class="button" name="submit"></br></td>
+			</tr>
+		</table>
+<br>
+		<table align="center" id="table">
+		
+		<thead>
+		<tr>
+			<center>
+						<th>Sl No.</th>
+							<th>Route</th>
+							<th>Driver</th>
+							<th>Status</th>
+							<th>Remove</th>
+		</center>
+
+		
+	</thead>
+	<tbody > 
+	
+			{% for row in data['assigndetails'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['route_name']}}</td>
+				<td>{{row['first_name']}} {{row['last_name']}}</td>
+				<td>{{row['status']}}</td>
+			
+				<td><a href="?action=delete&id={{row['driver_journey_id']}}">Delete</a></td>
+				
+			</tr>
+			{% endfor %}
+	</tbody>
+	</table>
+</form>
+
+</body>
+</center>
+</html>
+{% include 'footer.html'%}
+

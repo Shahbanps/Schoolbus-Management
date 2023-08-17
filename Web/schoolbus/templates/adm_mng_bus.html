@@ -1,0 +1,56 @@
+{% include 'adminheader.html'%}
+<html>
+<center>
+<head>
+	<h1 style="color: white;">Manage bus</h1>
+</head>
+<body>
+	<form method="post">
+		<table style="width: 500px;color: white;">
+			<tr>
+				<th>Register number</th>
+				<td><br><input type="text" class="form-control" name="reg_num" required="" ></br></td>
+			</tr>
+			<tr>
+				<th>Seat capacity</th>
+				<td><br><input type="text" class="form-control" name="seatcapacity" required="" pattern="[0-9]{1,5}"></br></td>
+			</tr>
+				<tr>
+					<td align="center" colspan="2"><br><input type="submit" class="button" name="submit"></br></td>
+				</tr>
+		</table>
+
+		<br> <table align="center" id="table"></br>
+		
+		<h2 align="center">Bus details </h2>
+		<thead>
+		<tr>
+			<center>
+				<th>Sl No.</th>
+				<th>Register number</th>
+				<th>Seat Capacity</th>
+				<th></th>
+				<th></th>
+		</center>
+
+		
+	</thead>
+	<tbody>
+		{% for row in data['buses']%}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{row['register_number']}}</td>
+		<td>{{row['seat_capacity']}}</td>
+	<td><a href="?action=delete&id={{row['bus_id']}}">Delete</a></td>
+		<td><a href="https://maps.google.com?q={{row['latitude']}},{{row['longitude']}}" target="_blank">Track Bus</a></td>	
+		
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+	</form>
+
+</body>
+</center>
+</html>
+{% include 'footer.html'%}

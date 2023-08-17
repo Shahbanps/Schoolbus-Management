@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Child at School</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_dri__startjourney">Dri_Startjourney</string>
+    <string name="title_activity_driver_home">DriverHome</string>
+    <string name="title_activity_parent_home">ParentHome</string>
+    <string name="title_activity_dri_viewstuddetails">Dri_viewstuddetails</string>
+    <string name="title_activity_dri_viewnotification">Dri_viewnotification</string>
+    <string name="title_activity_dri_addattendance">Dri_addattendance</string>
+    <string name="title_activity_par_viewstudlist">Par_viewstudlist</string>
+    <string name="title_activity_par_trackbus">Par_trackbus</string>
+    <string name="title_activity_par_managestudaval">Par_managestudaval</string>
+    <string name="title_activity_par_sendcomplaint">Par_sendcomplaint</string>
+    <string name="title_activity_par_sendnotification">Par_sendnotification</string>
+    <string name="title_activity_par_viewmsg">Par_viewmsg</string>
+    <string name="title_activity_par_viewclasses">Par_viewclasses</string>
+    <string name="title_activity_par_viewholidays">Par_viewholidays</string>
+    <string name="title_activity_par_viewdrivers">Par_viewdrivers</string>
+    <string name="title_activity_par_viewdriverlist">Par_viewdriverlist</string>
+    <string name="title_activity_par_view_driverss">Par_view_driverss</string>
+    <string name="title_activity_par_makepayment">Par_makepayment</string>
+
+</resources>

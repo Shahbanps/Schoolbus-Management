@@ -1,0 +1,49 @@
+
+{% include 'aayas_header.html'%}
+	<form>
+		<center>
+			<h2>STUDENT DETAILS</h2>
+			<div style="overflow-x: scroll; width: 1000px;" >
+			<table class="table" style="width: 1000px;">
+				<tr>
+					<th>Sl.no</th>
+					<th>Student Name</th>
+					<th>Parent Name</th>
+					<th>Relation With Parent</th>
+					<th>Route</th>
+					<th>Place</th>
+					<th>Photo</th>
+					<th>Course</th>
+					<th>Batch</th>
+					<th>DOB</th>
+					<th>Gender</th>
+					<th>Phone</th>
+					<th>Student Status</th>
+				</tr>
+				{% for row in data['std'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{ row['sname'] }}</td>
+					<td>{{ row['pname'] }}</td>
+					<td>{{ row['relation_with_parent'] }}</td>
+					<td>{{ row['route'] }}</td>
+					<td>{{ row['place'] }}</td>
+					<td><img src="/{{ row['image'] }}" height="100" width="100"></td>
+					<td>{{ row['course'] }}</td>
+					<td>{{ row['batch'] }}</td>
+					<td>{{ row['dob'] }}</td>
+					<td>{{ row['gender'] }}</td>
+					<td>{{ row['phone'] }}</td>
+					<td>{{ row['student_status'] }}</td>
+					<td><a href="aayas_send_messages_parent?ids={{row['parent_id']}}">Message Parent</a></td>
+					<td><a href="aayas_report_childline?ids={{row['student_id']}}">Report </a></td>
+					<td><a href="?action=present&ids={{row['student_id']}}">Present</a></td>
+					<td><a href="?action=absent&ids={{row['student_id']}}">Absent</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+			</div>
+		</center>
+	</form>
+
+{% include 'footer.html'%}

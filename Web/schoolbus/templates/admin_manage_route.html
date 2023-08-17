@@ -1,0 +1,53 @@
+{% include 'adminheader.html'%}
+<html>
+<head>
+	
+	<title></title>
+</head>
+<body>
+	<form method="post">
+	
+<center>
+	<h1  style="color: white;"><center>bus route</center></h1>
+		<table style="width: 800px;color: white;">
+			<tr>
+				<th>Route name</th>
+				<td><br><input type="text" class= "form-control" name="route_name" required=""></br></td>
+			</tr>
+			<tr>
+				<th>Route details</th>
+				<td><br><input type="text" class= "form-control" name="route_details" required=""></br></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" class="button" name="submit"></td>
+			</tr>
+		</table>
+		
+		  <br><table align="center" style="width: 800px;" id="table"></br>
+		<thead>
+		<tr>
+			<th>Sl No.</th>
+			<th>Route name</th>
+
+			<th>Route details</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for row in data['view_route']%}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{row['route_name']}}</td>
+		<td>{{row['route_details']}}</td>
+		 <td><a href="?action=delete&id={{row['route_id']}}">Delete</a></td>
+		<!--<td><a href="?action=update&id={{row['route_id']}}">Update</a></td> -->
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+	</center>
+	</form>
+
+</body>
+</html>
+{% include 'footer.html'%}

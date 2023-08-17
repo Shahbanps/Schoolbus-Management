@@ -1,0 +1,64 @@
+{% include 'adminheader.html'%}
+<html>
+<center>
+<head>
+	<h1 style="color: white;">manage holiday</h1>
+	
+</head>
+<body>
+	<form method="post">
+		<table style="color: white;width: 800px;">
+			<tr>
+				<th>holidayname</th>
+				<td><br><input type="text" class="form-control" name="holidayname" required=""></br></td>
+			</tr>
+			<tr>
+				<th>holiday date</th>
+				<td><br><input type="date" class="form-control" name="holidaydate" required=""></br></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><br><input type="submit" class="button" name="submit"></br></td>
+			</tr>
+
+		</table>
+
+		<br><table align="center"  id="table"></br>
+		
+		<h2 align="center"></h2>
+		<thead>
+		<tr>
+			<center>
+				<th>Sl No.</th>
+		<th>Holiday</th>
+
+		<th>Date</th>
+		<th></th>
+		</center>
+
+		
+	</thead>
+	<tbody>
+		{% for row in data['holidays']%}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{row['holiday_name']}}</td>
+		<td>{{row['holiday_date']}}</td>		
+		<td><a href="?action=delete&id={{row['holiday_id']}}">Delete</a></td>
+		<!-- <td><a href="?action=update&id={{row['route_id']}}">Update</a></td -->
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+
+
+
+
+
+
+
+	</form>
+
+</body>
+</center>
+</html>
+{% include 'footer.html'%}

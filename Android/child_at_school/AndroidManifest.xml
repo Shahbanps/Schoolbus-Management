@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.safe_journey"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.safe_journey.Ipsettings"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Login"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Dri_Startjourney"
+            android:label="@string/title_activity_dri__startjourney" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.DriverHome"
+            android:label="@string/title_activity_driver_home" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.ParentHome"
+            android:label="@string/title_activity_parent_home" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Dri_viewstuddetails"
+            android:label="@string/title_activity_dri_viewstuddetails" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Dri_addattendance"
+            android:label="@string/title_activity_dri_addattendance" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Par_viewstudlist"
+            android:label="@string/title_activity_par_viewstudlist" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Par_trackbus"
+            android:label="@string/title_activity_par_trackbus" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Par_managestudaval"
+            android:label="@string/title_activity_par_managestudaval" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Par_sendmsgreply"
+            android:label="@string/title_activity_par_sendcomplaint" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Par_sendnotification"
+            android:label="@string/title_activity_par_sendnotification" >
+        </activity>
+
+        <service android:name="com.example.safe_journey.notification" >
+        </service>
+        <service android:name="com.example.safe_journey.LocationService" >
+        </service>
+
+        <activity
+            android:name="com.example.safe_journey.Par_viewmsg"
+            android:label="@string/title_activity_par_viewmsg" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Par_viewclasses"
+            android:label="@string/title_activity_par_viewclasses" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Par_viewholidays"
+            android:label="@string/title_activity_par_viewholidays" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Par_viewdriverlist"
+            android:label="@string/title_activity_par_viewdriverlist" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Par_view_driverss"
+            android:label="@string/title_activity_par_view_driverss" >
+        </activity>
+        <activity
+            android:name="com.example.safe_journey.Par_makepayment"
+            android:label="@string/title_activity_par_makepayment" >
+        </activity>
+    </application>
+
+</manifest>

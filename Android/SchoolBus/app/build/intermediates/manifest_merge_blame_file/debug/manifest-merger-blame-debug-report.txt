@@ -1,0 +1,171 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.safe_journey"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:7:5-67
+11-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:7:22-64
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:8:5-79
+12-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:8:22-76
+13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+13-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:9:5-81
+13-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:9:22-78
+14
+15    <application
+15-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:11:5-82:19
+16        android:allowBackup="true"
+16-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:12:9-35
+17        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+17-->[com.android.support:support-compat:28.0.0] C:\Users\Lenovo\.gradle\caches\transforms-2\files-2.1\b73d0db3c489aeab8b531c92b0313ef9\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+18        android:debuggable="true"
+19        android:icon="@drawable/icon"
+19-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:13:9-38
+20        android:label="@string/app_name"
+20-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:14:9-41
+21        android:testOnly="true"
+22        android:theme="@style/AppTheme"
+22-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:16:9-40
+23        android:usesCleartextTraffic="true" >
+23-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:15:9-44
+24        <activity android:name="com.example.school_bus.Processing_page" />
+24-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:17:9-62
+24-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:17:19-50
+25        <activity
+25-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:18:9-26:20
+26            android:name="com.example.school_bus.Ipsettings"
+26-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:19:13-39
+27            android:label="@string/app_name" >
+27-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:20:13-45
+28            <intent-filter>
+28-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:21:13-25:29
+29                <action android:name="android.intent.action.MAIN" />
+29-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:22:17-69
+29-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:22:25-66
+30
+31                <category android:name="android.intent.category.LAUNCHER" />
+31-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:24:17-77
+31-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:24:27-74
+32            </intent-filter>
+33        </activity>
+34        <activity
+34-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:27:9-29:69
+35            android:name="com.example.school_bus.Login"
+35-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:28:13-34
+36            android:label="@string/title_activity_login" />
+36-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:29:13-57
+37        <activity
+37-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:30:9-32:81
+38            android:name="com.example.school_bus.Dri_Startjourney"
+38-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:31:13-45
+39            android:label="@string/title_activity_dri__startjourney" />
+39-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:32:13-69
+40        <activity
+40-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:33:9-35:75
+41            android:name="com.example.school_bus.DriverHome"
+41-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:34:13-39
+42            android:label="@string/title_activity_driver_home" />
+42-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:35:13-63
+43        <activity
+43-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:36:9-38:75
+44            android:name="com.example.school_bus.ParentHome"
+44-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:37:13-39
+45            android:label="@string/title_activity_parent_home" />
+45-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:38:13-63
+46        <activity
+46-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:39:9-41:83
+47            android:name="com.example.school_bus.Dri_viewstuddetails"
+47-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:40:13-48
+48            android:label="@string/title_activity_dri_viewstuddetails" />
+48-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:41:13-71
+49        <activity
+49-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:42:9-44:81
+50            android:name="com.example.school_bus.Dri_addattendance"
+50-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:43:13-46
+51            android:label="@string/title_activity_dri_addattendance" />
+51-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:44:13-69
+52        <activity
+52-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:45:9-47:80
+53            android:name="com.example.school_bus.Par_viewstudlist"
+53-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:46:13-45
+54            android:label="@string/title_activity_par_viewstudlist" />
+54-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:47:13-68
+55        <activity
+55-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:48:9-50:76
+56            android:name="com.example.school_bus.Par_trackbus"
+56-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:49:13-41
+57            android:label="@string/title_activity_par_trackbus" />
+57-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:50:13-64
+58        <activity
+58-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:51:9-53:82
+59            android:name="com.example.school_bus.Par_managestudaval"
+59-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:52:13-47
+60            android:label="@string/title_activity_par_managestudaval" />
+60-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:53:13-70
+61        <activity
+61-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:54:9-56:81
+62            android:name="com.example.school_bus.Par_sendmsgreply"
+62-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:55:13-45
+63            android:label="@string/title_activity_par_sendcomplaint" />
+63-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:56:13-69
+64        <activity
+64-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:57:9-59:84
+65            android:name="com.example.school_bus.Par_sendnotification"
+65-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:58:13-49
+66            android:label="@string/title_activity_par_sendnotification" />
+66-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:59:13-72
+67
+68        <service android:name="com.example.school_bus.notification" />
+68-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:61:9-57
+68-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:61:18-46
+69        <service android:name="com.example.school_bus.LocationService" />
+69-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:62:9-60
+69-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:62:18-49
+70
+71        <activity
+71-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:64:9-66:75
+72            android:name="com.example.school_bus.Par_viewmsg"
+72-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:65:13-40
+73            android:label="@string/title_activity_par_viewmsg" />
+73-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:66:13-63
+74        <activity
+74-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:67:9-69:79
+75            android:name="com.example.school_bus.Par_viewclasses"
+75-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:68:13-44
+76            android:label="@string/title_activity_par_viewclasses" />
+76-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:69:13-67
+77        <activity
+77-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:70:9-72:80
+78            android:name="com.example.school_bus.Par_viewholidays"
+78-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:71:13-45
+79            android:label="@string/title_activity_par_viewholidays" />
+79-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:72:13-68
+80        <activity
+80-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:73:9-75:82
+81            android:name="com.example.school_bus.Par_viewdriverlist"
+81-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:74:13-47
+82            android:label="@string/title_activity_par_viewdriverlist" />
+82-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:75:13-70
+83        <activity
+83-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:76:9-78:81
+84            android:name="com.example.school_bus.Par_view_driverss"
+84-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:77:13-46
+85            android:label="@string/title_activity_par_view_driverss" />
+85-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:78:13-69
+86        <activity
+86-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:79:9-81:79
+87            android:name="com.example.school_bus.Par_makepayment"
+87-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:80:13-44
+88            android:label="@string/title_activity_par_makepayment" />
+88-->D:\2021 Projects\Cochin College\child at school\child at school\School bus\Android\SchoolBus\app\src\main\AndroidManifest.xml:81:13-67
+89    </application>
+90
+91</manifest>

@@ -1,0 +1,185 @@
+{% include 'adminheader.html'%}
+								
+	<script src="/static/js/jquery.js"></script>
+	<script type="text/javascript">
+	 document.ready=function(){
+        $("#route").change(function(){
+            var route_id = $(this).val();
+          // alert(route_id)
+            $.get('{{url_for("admin.getplace")}}?route_id='+route_id,function(data){
+                response=JSON.parse(data)
+                var len = response.length;
+                $("#place").empty();
+                $("#place").append("<option value='0'>--Select--</option>");
+                for( var i = 0; i<len; i++)
+                {
+                    var id = response[i]['id'];
+                    var name = response[i]['name'];
+                    $("#place").append("<option value='"+id+"'>"+name+"</option>");
+                }
+            });
+        });
+    }
+	</script>
+<center>
+	
+	<form method="post" enctype="multipart/form-data">
+		{% if data['updatedata'] %}
+
+	<table align="center" style="width: 500px">
+
+		<tr>
+			<th>first_name</th>
+			<td><br><input type="text"  class="form-control" name="first_name" required="" value="{{data['updatedata'][0]['first_name']}}"></br></td>
+		</tr>
+		<tr>
+			<th>last_name</th>
+			<td><br><input type="text" class="form-control" name="last_name" required="" value="{{data['updatedata'][0]['last_name']}}"></td>
+		</tr>
+		<tr>
+			<th>relation_with_parent</th>
+			<td><br><input type="text" class="form-control" name="relation_with_parent" required="" value="{{data['updatedata'][0]['relation_with_parent']}}"></br></td>
+		</tr>
+		<tr>
+			<th>image</th>
+			<td><br><input type="file"  class="form-control" name="image" required="" value="{{data['updatedata'][0]['image']}}"></br></td>
+		</tr>
+		
+		
+		<tr>
+			<th>course</th>
+			<td><br><input type="text" class="form-control"  name="course" required="" value="{{data['updatedata'][0]['course']}}"></br></td>
+
+		</tr>
+		<tr>
+			<th>batch</th>
+			<td><br><input type="text" class="form-control"  name="batch" required="" value="{{data['updatedata'][0]['batch']}}"></br></td>
+			
+		</tr>
+		<tr>
+			<th>phone</th>
+			<td><br><input type="text" class="form-control" required="" pattern="[0-9]{10}"  name="phone" value="{{data['updatedata'][0]['phone']}}"></br></td>
+			
+		</tr>
+		<tr>
+				<td colspan="2" align="center"><input type="submit"  class="button" name="update" value="Update"></td>
+			</tr>
+
+	</table>
+	{% else %}
+
+
+<table align="center" style="width: 900px;color:#FFF;">
+<h1 style="color:#FFF;">Register student</h1>
+	<tr>
+			<th>First name</th>
+			<td  style="width: 350px;"><br><input type="text"  class="form-control" name="first_name" required=""></br></td>
+			<th>Last name</th>
+			<td><br><input type="text" class="form-control" name="last_name" required=""></td>
+		</tr>
+		
+		<tr>
+			<th>Parent name</th>
+			<td><br>
+				<select name="parent_id" class="form-control" required="">
+					<option selected=""> select parent</option>
+					{% for row in data['view_parent'] %}
+					<option value="{{row['parent_id']}}">{{row['first_name']}} {{row['last_name']}}</option>
+					{% endfor %}
+				</select></br>
+	
+			</td>
+			<th>Relation with parent</th>
+			<td><br><input type="text" class="form-control" name="relation_with_parent" required=""></br></td>
+		</tr>
+		
+		<tr>
+			<th>Dob</th>
+			<td><br><input type="date" class="form-control"  name="dob" required=""></br></td>
+			<th>Gender</th>
+			<td><input type="radio" name="gender" value="male" checked="true">Male<input type="radio" name="gender" value="female" >Female</td>
+		</tr>
+		
+		<tr>
+			<th>Route</th>
+			<td><br>
+			<select name="route_id" id="route" class="form-control" required="">
+					<option selected=""> select root</option>
+					{% for row in data['view_route'] %}
+					<option value="{{row['route_id']}}">{{row['route_name']}}</option>
+					{% endfor %}
+				</select></br>
+				</td>
+				<th>Place</th>
+			<td><br>
+			  <select name="place_name" id="place" class="form-control" required="">
+									<option value="0">--Select--</option>
+								</select></br>
+				</td>
+		</tr>
+
+			<tr>
+			<th>course</th>
+			<td><br><input type="text" class="form-control"  name="course" required=""></br></td>
+			<th>batch</th>
+			<td><br><input type="text" class="form-control"  name="batch" required=""></br></td>
+			
+		</tr>
+		<tr>
+			<th>Phone</th>
+			<td><br><input type="text" class="form-control"  name="phone" required="" pattern="[0-9]{10}"></br></td>
+			<th>Image</th>
+			<td><br><input type="file"  class="form-control" name="image" required=""></br></td>
+		</tr>
+		
+		<tr>
+				<td colspan="4" align="center"><input type="submit"  class="button" name="submit" value="submit"></td>
+			</tr>
+	</table>
+	{% endif %}
+
+	<br><table align="center"  id="table"></br>
+		<h2 align="center"></h2>
+		<thead>
+		<tr>
+		<th>Sl No.</th>
+		<th>Full name</th>
+		<th>Relationship</th>
+		<th>Dob</th>
+		<th>Gender</th>
+		<th>Route</th>
+		<th>Place</th>
+		<th>Course</th>
+		<th>Batch</th>
+		<th>Phone</th>
+		<th>Status</th>
+		<th>photo</th>
+		<th></th>
+	</tr>
+	</thead>
+	<tbody>
+		{% for row in data['students']%}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{row['first_name']}} {{row['last_name']}}</td>
+		<td>{{row['relation_with_parent']}}</td>
+		<td>{{row['dob']}}</td>
+		<td>{{row['gender']}}</td>
+		<td>{{row['route_name']}}</td>
+		<td>{{row['place_name']}}</td>
+		<td>{{row['course']}}</td>
+		<td>{{row['batch']}}</td>
+		<td>{{row['phone']}}</td>
+		<td>{{row['student_status']}}</td>
+		<td><img width="100px" height="100px" src="/{{row['image']}}"></td>
+
+		<td><a href="?action=delete&id={{row['student_id']}}">Delete</a></td>
+		<!-- <td><a href="?action=update&id={{row['student_id']}}">Update</a></td> -->
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+	</form>
+
+</center>
+{% include'footer.html'%}

@@ -1,0 +1,73 @@
+{% include 'adminheader.html'%}
+<html>
+<center>
+<head>
+
+</head>
+<body >
+	<form method="post">
+		<h1 style="color: white;">Manage class</h1>
+		<table style="width: 500px;color: white;">
+			<tr>
+				<th>Course</th>
+				<td><br><input type="text" class="form-control" name="course" required=""></br></td>
+			</tr>
+			<tr>
+				<th>Batch</th>
+				<td><br><input type="text" class="form-control" name="batch" required=""></br></td>
+			</tr>
+			<tr>
+				<th>Subject name</th>
+				<td><br><input type="text" class="form-control" name="subname" required=""></br></td>
+			</tr>
+			<tr>
+				<th>Tutor name</th>
+				<td><br><input type="text" class="form-control" name="tutorname" required=""></br></td>
+			</tr>
+			<tr>
+				<th>Date&Time</th>
+				<td><br><input type="datetime-local" class="form-control" name="date_time" required=""></br></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><br><input type="submit" class="button" name="submit"></br></td>
+			</tr>
+		</table>
+
+		<table align="center" id="table">
+		
+		<thead>
+		<tr>
+			<center>
+				<th>Sl No.</th>
+				<th>Course</th>
+				<th>Batch</th>
+				<th>Subject name</th>
+				<th>Tutorname</th>
+				<th>Datetime</th>
+				<th></th>
+		</center>
+
+		
+	</thead>
+	<tbody > 
+	
+		{% for row in data['classes']%}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{row['course']}}</td>
+		<td>{{row['batch']}}</td>
+		<td>{{row['sub_name']}}</td>
+		<td>{{row['tutor_name']}}</td>
+		<td>{{row['date_time']}}</td>		
+		<td><a href="?action=delete&id={{row['class_id']}}">Delete</a></td>
+		<!-- <td><a href="?action=update&id={{row['route_id']}}">Update</a></td -->>
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+</form>
+
+</body>
+</center>
+</html>
+{% include 'footer.html'%}

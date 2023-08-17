@@ -1,0 +1,122 @@
+{% include 'adminheader.html'%}
+<html>
+<center><head>
+	
+</head>
+<body>
+	<h1 style="color: white;">Manage driver</h1>
+	<form method="post" enctype="multipart/form-data">
+	{% if data['updatedata']%}
+	
+			<table style="width: 800px;color: white;">
+					<tr>
+						<th>First name</th>
+						<td><br><input type="text" class="form-control" required="" name="firstname" value="{{data['updatedata'][0]['first_name']}}"></td>
+					</tr>
+					<tr>
+						<th>Last name</th>
+						<td><br><input type="text" class="form-control" required="" name="lname" value="{{data['updatedata'][0]['last_name']}}"></td>
+					</tr>
+					<tr>
+						<th>Contact Number</th>
+						<td><br><input type="text" class="form-control" required="" pattern="[0-9]{10}" name="phone" value="{{data['updatedata'][0]['contact_no']}}"></td>
+					</tr>
+					<tr>
+						<th>image</th>
+						<td><br><input type="file" class="form-control" required="" name="image" value="{{data['updatedata'][0]['image']}}"></td>
+					</tr>
+
+					<tr>
+						<td align="center" colspan="2"><input type="submit" name="update" value="update" class="button"></td>
+					</tr>
+		</table>
+	{% else %}
+
+	 	<table style="width: 800px;color: white;">
+				<tr>
+				<th>Bus name</th>
+				<td>
+				<select name="bus_id" class="form-control">
+						<option selected="">Select bus</option>
+						{% for row in data['view_bus'] %}
+						<option value="{{row['bus_id']}}">{{row['register_number']}}</option>
+						{% endfor %}
+					</select>
+					</td>
+					<tr>
+						<tr>
+							<th>First name</th>
+							<td><br><input type="text" class="form-control" name="firstname" required=""></br></td>
+						</tr>
+						<tr>
+							<th>Last name</th>
+							<td><br><input type="text" class="form-control" name="lname" required=""></br></td>
+						</tr>
+						<tr>
+							<th>Contact number</th>
+							<td><br><input type="text" class="form-control" name="phone" pattern="[0-9]{10}" required=""></br></td>
+						</tr>
+						<tr>
+							<th>Image</th>
+							<td><br><input type="file" class="=form-control" name="image" required=""></br></td>
+						</tr>
+
+						<tr>
+				            <th>Username</th>
+				              <td><br><input type="text" class="form-control" name="username" required=""></br></td>
+			      </tr>
+			            <tr>
+				              <th>Password</th>
+				                <td><br><input type="password" class="form-control" name="password" required=""></br></td>
+			           </tr>
+						<tr>
+							<td align="center" colspan="2"><input type="submit" class="button" name="submit" value="submit"></td>
+						</tr>
+
+			</table>
+	{% endif %}
+
+
+		 <table align="center" id="table">
+		
+		<h2 align="center" style="color: white;">Driver details</h2>
+		<thead>
+		<tr>
+			<center>
+		<th>Sl No.</th>
+
+		<th>First name</th>
+		<th>Last name</th>
+		<th>Contact Number</th>
+		<th>Image</th>
+		<th></th>
+		<th></th>
+		</center>
+
+		
+	</thead>
+	<tbody>
+		{% for row in data['drivers']%}
+	<tr>
+		
+		<td>{{loop.index}}</td>
+		<td>{{row['first_name']}}</td>
+		<td>{{row['last_name']}}</td>
+		<td>{{row['contact_no']}}</td>
+		<td><img width=100,height=100 src="/{{row['image']}}"></td>
+			<td><a href="?action=delete&id={{row['driver_id']}}&lid={{row['login_id']}}">Delete</a></td>
+		<td><a href="?action=update&id={{row['driver_id']}}&lid={{row['login_id']}}">Update</a></td>
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+		
+	</form>
+
+
+
+</body>
+</center>
+
+</html>
+{% include 'footer.html'%}

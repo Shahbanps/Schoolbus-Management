@@ -1,0 +1,122 @@
+{% include 'adminheader.html'%}
+<style type="text/css">
+	.column {
+  float: center;
+  width: 50%;
+  padding: 10px;
+   height: 100px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<script src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3MPnSnyWwNmpnVEFkaddVvy_GWtxSejs&sensor=false"></script>
+<script type="text/javascript">
+
+function my_code(){
+			        document.getElementById("dvMap").style.display = 'none';
+			}
+		window.onload=my_code();
+</script>
+    </script>
+    <script type="text/javascript">
+        	function myFunction(){
+            var mapOptions = {
+                center: new google.maps.LatLng(9.9763482, 76.286272),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var infoWindow = new google.maps.InfoWindow();
+            var latlngbounds = new google.maps.LatLngBounds();
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+            google.maps.event.addListener(map, 'click', function (e) {
+                alert("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
+                document.getElementById('lat').value = e.latLng.lat();
+                document.getElementById('lon').value = e.latLng.lng();
+ 				 document.getElementById("dvMap").style.display = 'none';
+            });
+        }
+    </script>
+<body>
+	<form method="post">
+	
+      <center>
+      	<h2 style="color: white;" align="center">Manage Place details</h2>
+      	
+		<table align="center" style="width: 800px;color: white;margin-left: 200px">
+			<tr>
+			<th>Route</th>
+			<td><br>
+			<select name="route_id" class="form-control" required="">
+					<option selected="">select root</option>
+					{% for row in data['view_route'] %}
+					<option value="{{row['route_id']}}">{{row['route_name']}}</option>
+					{% endfor %}
+				</select></br>
+				</td>
+		</tr>
+			<tr>
+				<th>Place name</th>
+				<td><br><input type="text" class="form-control" name="place_name" required=""></br></td>
+			</tr>
+			<tr>
+				<th>latitude</th>
+				<td><br><input type="text" class="form-control" name="lat" id="lat" required=""></br></td>
+			</tr>
+			<tr>
+				<th>longitude</th>
+				<td><br><input type="text" class="form-control" name="lon"  id="lon" required=""></br></td>
+				<td><a onclick="myFunction();">View Map</a></td>
+			</tr>
+				
+			<tr>
+				<td colspan="2" align="center"><br><input type="submit" class="button" name="submit"></br></td>
+			</tr>
+		</table>
+
+		<div class="row">
+			<div class="column">
+				<div id="dvMap" style="width: 800px; height: 800px"></div>
+	
+			</div>
+		</div>
+			 
+		</center>
+		 
+	<table align="center" border="2" id="table"></br>
+		
+		<h2 style="color: white;" align="center">Place details </h2><br>
+		<thead>
+		<tr>
+			<center>
+				<th>Sl No.</th>
+				<th>Placename</th>
+				<th>latitude</th>
+				<th>longitude</th>
+				<th></th>
+		</center>
+
+		
+	</thead>
+	<tbody>
+		{% for row in data['places']%}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{row['place_name']}}</td>
+		<td>{{row['latitude']}}</td>
+		<td>{{row['longitude']}}</td>	<td><a href="?action=delete&id={{row['place_id']}}">Delete</a></td>
+			<!-- <td><a href="?action=update&id={{row['route_id']}}">Update</a></td> -->
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+	</form>
+
+</body>
+</html>
+{% include 'footer.html'%}

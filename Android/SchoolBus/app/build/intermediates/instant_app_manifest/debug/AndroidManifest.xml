@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.safe_journey"
+    android:targetSandboxVersion="2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="29" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:testOnly="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true" >
+        <activity android:name="com.example.school_bus.Processing_page" />
+        <activity
+            android:name="com.example.school_bus.Ipsettings"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.school_bus.Login"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name="com.example.school_bus.Dri_Startjourney"
+            android:label="@string/title_activity_dri__startjourney" />
+        <activity
+            android:name="com.example.school_bus.DriverHome"
+            android:label="@string/title_activity_driver_home" />
+        <activity
+            android:name="com.example.school_bus.ParentHome"
+            android:label="@string/title_activity_parent_home" />
+        <activity
+            android:name="com.example.school_bus.Dri_viewstuddetails"
+            android:label="@string/title_activity_dri_viewstuddetails" />
+        <activity
+            android:name="com.example.school_bus.Dri_addattendance"
+            android:label="@string/title_activity_dri_addattendance" />
+        <activity
+            android:name="com.example.school_bus.Par_viewstudlist"
+            android:label="@string/title_activity_par_viewstudlist" />
+        <activity
+            android:name="com.example.school_bus.Par_trackbus"
+            android:label="@string/title_activity_par_trackbus" />
+        <activity
+            android:name="com.example.school_bus.Par_managestudaval"
+            android:label="@string/title_activity_par_managestudaval" />
+        <activity
+            android:name="com.example.school_bus.Par_sendmsgreply"
+            android:label="@string/title_activity_par_sendcomplaint" />
+        <activity
+            android:name="com.example.school_bus.Par_sendnotification"
+            android:label="@string/title_activity_par_sendnotification" />
+
+        <service android:name="com.example.school_bus.notification" />
+        <service android:name="com.example.school_bus.LocationService" />
+
+        <activity
+            android:name="com.example.school_bus.Par_viewmsg"
+            android:label="@string/title_activity_par_viewmsg" />
+        <activity
+            android:name="com.example.school_bus.Par_viewclasses"
+            android:label="@string/title_activity_par_viewclasses" />
+        <activity
+            android:name="com.example.school_bus.Par_viewholidays"
+            android:label="@string/title_activity_par_viewholidays" />
+        <activity
+            android:name="com.example.school_bus.Par_viewdriverlist"
+            android:label="@string/title_activity_par_viewdriverlist" />
+        <activity
+            android:name="com.example.school_bus.Par_view_driverss"
+            android:label="@string/title_activity_par_view_driverss" />
+        <activity
+            android:name="com.example.school_bus.Par_makepayment"
+            android:label="@string/title_activity_par_makepayment" />
+    </application>
+
+</manifest>

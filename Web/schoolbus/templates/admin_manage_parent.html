@@ -1,0 +1,116 @@
+{% include 'adminheader.html'%}
+<center>
+	<h1 style="color:#FFF;"><center>Manage Parents</center></h1>
+	<form method="post">
+		{% if data['updatedata']%}
+	<table align="center" style="width: 500px;color:#FFF;">
+		<tr>
+			<th>fname</th>
+			<td><br><input type="text" class="form-control" required="" name="first_name" value="{{data['updatedata'][0]['first_name']}}"></br></td>
+		</tr>
+		<tr>
+			<th>lname</th>
+			<td><br><input type="text" class="form-control" required="" name="last_name" value="{{data['updatedata'][0]['last_name']}}"></br></td>
+		</tr>
+		
+		<tr>
+			<th>occupation</th>
+			<td><br><input type="text" class="form-control" required="" name="occupation" value="{{data['updatedata'][0]['occupation']}}"></td>
+		</tr>
+		<tr>
+			<th>phone</th>
+			<td><br><input type="text"  class="form-control" required="" pattern="[0-9]{10}" name="phone" value="{{data['updatedata'][0]['occupation']}}"></br></td>
+		</tr>
+		<tr>
+			<th>email</th>
+			<td><br><input type="email" class="form-control" required=""  name="email" value="{{data['updatedata'][0]['email']}}"></br></td>
+		</tr>
+		<tr>
+			<th>housename</th>
+			<td><br><input type="text" class="form-control" required=""  name="house_name" value="{{data['updatedata'][0]['house_name']}}"></br></td>
+		</tr>
+		<tr>
+			<th>place</th>
+			<td><br><input type="text" class="form-control" required="" name="place" value="{{data['updatedata'][0]['place']}}"></br></td>
+		</tr>
+		<tr>
+				<td colspan="2" align="center"><input type="submit"  class="btn-primary" name="update" value="submit"></td>
+			</tr>
+	</table>
+	{% else %}
+
+		<table align="center" style="width: 900px;color:#FFF;">
+			<tr>
+				<th>First name</th>
+				<td><br><input type="text" class="form-control" name="first_name" required=""></br></td>
+				<th>Last name</th>
+				<td><br><input type="text" class="form-control" name="last_name" required=""></br></td>
+			</tr>
+			
+			<tr>
+				<th>Occupation</th>
+				<td colspan="3"><br><input type="text" class="form-control" name="occupation" required=""></td>
+			</tr>
+			<tr>
+				<th>Phone</th>
+				<td><br><input type="text"  class="form-control" name="phone"  required="" pattern="[0-9]{10}"></br></td>
+				<th>Email</th>
+				<td><br><input type="email" class="form-control"  name="email"></br></td>
+			</tr>
+			<tr>
+				<th>Housename</th>
+				<td><br><input type="text" class="form-control"  name="house_name" required=""></br></td>
+				<th>Place</th>
+				<td><br><input type="text" class="form-control"  name="place" required=""></br></td>
+			</tr>
+			<tr>
+				<th>Username</th>
+				<td></><input type="text"  class="form-control"name="username" required=""></br></td>
+				<th>Password</th>
+				<td><br><input type="password"  class="form-control" name="password" required=""></br></td>
+			</tr>
+			<tr>
+					<td colspan="4" align="center"><input type="submit"  class="button" name="submit" value="submit"></td>
+				</tr>
+		</table>
+	{% endif %}
+
+
+
+	<br><table align="center" border="2" id="table"></br>
+		<h2 align="center" style="color: white;">Parents details </h2>
+		<thead>
+		<tr><br>
+			<th>Sl No.</th>
+		<th>Full name</th>
+
+	
+		<th>Occupation</th>
+
+		<th>Phone</th>
+
+		<th>Email</th>
+		<th>Housename</th>
+		<th>Place</th></br>
+		<th></th>
+	</tr>
+	</thead>
+	<tbody>
+		{% for row in data['parents']%}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{row['first_name']}} {{row['last_name']}}</td>
+		<td>{{row['occupation']}}</td>
+		<td>{{row['phone']}}</td>
+		<td>{{row['email']}}</td>
+		<td>{{row['house_name']}}</td>
+		<td>{{row['place']}}</td>
+		<td><a href="?action=delete&id={{row['parent_id']}}">Delete</a></td>
+		<!-- <td><a href="?action=update&id={{row['parent_id']}}">Update</a></td> -->
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+	</form>
+	</center>
+{% include'footer.html'%}

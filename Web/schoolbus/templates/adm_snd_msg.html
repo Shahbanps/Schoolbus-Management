@@ -1,0 +1,66 @@
+{% include 'adminheader.html'%}
+
+<center>
+
+	<h1 style="color: white">message</h1>
+	<form method="post">
+		<table style="width: 500px;color: white">
+		<tr>
+			<td>Parent name</td>
+			<td><br>
+				<select name="parent_id" class="form-control" required="">
+					<option selected=""> select parent</option>
+					{% for row in data['view_parent'] %}
+					<option value="{{row['parent_id']}}">{{row['first_name']}} {{row['last_name']}}</option>
+					{% endfor %}
+				</select></br>
+	
+			</td>
+		</tr>
+			<tr>
+				<td>Message</td>
+				<td><br><textarea class="form-control" name="message" required=""></textarea></br></td>
+				<tr>
+				<td colspan="2" align="center"><br><input type="submit" class="button" name="submit"></br></td>
+			</tr>
+		</table>
+
+
+
+		<br><table align="center" id="table" >
+		
+		<thead>
+		<tr>
+			<center>
+
+        <th>Sl No.</th>
+        <th>Parent Name</th>
+		<th>message</th>
+		<th>reply</th>
+		<th>message_date</th>
+		<th></th>
+		</center>
+
+		
+	</thead>
+	<tbody>
+		{% for row in data['messages']%}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{row['first_name']}}</td>
+		<td>{{row['message_description']}}</td>
+		<td>{{row['reply_description']}}</td>
+		<td>{{row['message_date']}}</td>
+				
+		<td><a href="?action=delete&id={{row['message_id']}}">Delete</a></td>
+		<!-- <td><a href="?action=update&id={{row['route_id']}}">Update</a></td -->
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+
+
+	</form>
+
+</center>
+{% include 'footer.html'%}

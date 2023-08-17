@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.school_bus"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Processing_page"></activity>
+        <activity
+            android:name=".Ipsettings"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_login"></activity>
+        <activity
+            android:name=".Dri_Startjourney"
+            android:label="@string/title_activity_dri__startjourney"></activity>
+        <activity
+            android:name=".DriverHome"
+            android:label="@string/title_activity_driver_home"></activity>
+        <activity
+            android:name=".ParentHome"
+            android:label="@string/title_activity_parent_home"></activity>
+        <activity
+            android:name=".Dri_viewstuddetails"
+            android:label="@string/title_activity_dri_viewstuddetails"></activity>
+        <activity
+            android:name=".Dri_addattendance"
+            android:label="@string/title_activity_dri_addattendance"></activity>
+        <activity
+            android:name=".Par_viewstudlist"
+            android:label="@string/title_activity_par_viewstudlist"></activity>
+        <activity
+            android:name=".Par_trackbus"
+            android:label="@string/title_activity_par_trackbus"></activity>
+        <activity
+            android:name=".Par_managestudaval"
+            android:label="@string/title_activity_par_managestudaval"></activity>
+        <activity
+            android:name=".Par_sendmsgreply"
+            android:label="@string/title_activity_par_sendcomplaint"></activity>
+        <activity
+            android:name=".Par_sendnotification"
+            android:label="@string/title_activity_par_sendnotification"></activity>
+
+        <service android:name=".notification"></service>
+        <service android:name=".LocationService"></service>
+
+        <activity
+            android:name=".Par_viewmsg"
+            android:label="@string/title_activity_par_viewmsg"></activity>
+        <activity
+            android:name=".Par_viewclasses"
+            android:label="@string/title_activity_par_viewclasses"></activity>
+        <activity
+            android:name=".Par_viewholidays"
+            android:label="@string/title_activity_par_viewholidays"></activity>
+        <activity
+            android:name=".Par_viewdriverlist"
+            android:label="@string/title_activity_par_viewdriverlist"></activity>
+        <activity
+            android:name=".Par_view_driverss"
+            android:label="@string/title_activity_par_view_driverss"></activity>
+        <activity
+            android:name=".Par_makepayment"
+            android:label="@string/title_activity_par_makepayment"></activity>
+    </application>
+
+</manifest>

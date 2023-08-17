@@ -1,0 +1,28 @@
+
+{% include 'child_line_header.html'%}
+	<form>
+		<center>
+			<h2>COMPLAINTS</h2>
+			<table class="table" style="width: 700px;">
+				<tr>
+					<th>Sl.no</th>
+					<th>Aaya Name</th>
+					<th>Student Name</th>
+					<th>Complaint</th>
+					<th>Date</th>
+				</tr>
+				{% for row in data['comp'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['aname']}}</td>
+					<td>{{row['sname']}}</td>
+					<td>{{row['complaint']}}</td>
+					<td>{{row['date']}}</td>
+					<td><a href="child_line_message_parents?ids={{row['parent_id']}}">Message Parent</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+		</center>
+	</form>
+
+{% include 'footer.html'%}

@@ -1,0 +1,118 @@
+{% include 'adminheader.html'%}
+<center>
+	<h1 style="color:#FFF;"><center>Manage Aayas</center></h1>
+	<form method="post">
+		{% if data['upaaya']%}
+	<table align="center" style="width: 500px;color:#FFF;">
+		<tr>
+			<th>Bus Name</th>
+			<td><select name="bname">
+					<option>select</option>
+					{% for row in data['buses'] %}
+					<option value="{{row['bus_id']}}">{{row['register_number']}}</option>
+					{% endfor %}
+				</select></td>
+		</tr>
+		<tr>
+			<th>First Name</th>
+			<td><br><input type="text" class="form-control" required="" name="lname" value="{{data['upaaya'][0]['first_name']}}"></br></td>
+		</tr>
+		<tr>
+			<th>Last Name</th>
+			<td><br><input type="text" class="form-control" required="" name="lname" value="{{data['upaaya'][0]['last_name']}}"></br></td>
+		</tr>
+		
+		<tr>
+			<th>House Name</th>
+			<td><br><input type="text" class="form-control" required="" name="hname" value="{{data['upaaya'][0]['house_name']}}"></td>
+		</tr>
+		<tr>
+			<th>Place</th>
+			<td><br><input type="text"  class="form-control" required=""  name="place" value="{{data['upaaya'][0]['place']}}"></br></td>
+		</tr>
+		<tr>
+			<th>Phone</th>
+			<td><br><input type="phone" class="form-control" required=""  name="phone" pattern="[0-9]{10}" value="{{data['upaaya'][0]['phone']}}"></br></td>
+		</tr>
+		<tr>
+				<td colspan="2" align="center"><input type="submit"  class="btn-primary" name="update" value="submit"></td>
+			</tr>
+	</table>
+	{% else %}
+
+		<h2>MANAGE AAYAS</h2>
+		<table align="center" style="width: 900px;color:#FFF;" class="table">
+			<tr>
+				<th>Bus Name</th>
+				<td><select name="bname" class="form-control">
+					<option>select</option>
+					{% for row in data['buses'] %}
+					<option value="{{row['bus_id']}}">{{row['register_number']}}</option>
+					{% endfor %}
+				</select></td>
+			</tr>
+			<tr>
+				<th>First name</th>
+				<td><input type="text" class="form-control" name="fname" required=""></td>
+			</tr>
+			<tr>
+				<th>Last name</th>
+				<td><input type="text" class="form-control" name="lname" required=""></td>
+			</tr>	
+			<tr>
+				<th>House Name</th>
+				<td colspan="3"><br><input type="text" class="form-control" name="hname" required=""></td>
+			</tr>
+				<th>Place</th>
+				<td><input type="text" class="form-control"  name="place" required=""></td>
+			<tr>
+				<th>Phone</th>
+				<td><input type="text"  class="form-control" name="phone"  required="" pattern="[0-9]{10}"></td>
+			</tr>
+			<tr>
+				<th>Username</th>
+				<td></><input type="text"  class="form-control"name="uname" required=""></td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td><input type="password"  class="form-control" name="pwd" required=""></td>
+			</tr>
+			<tr>
+					<td colspan="2" align="center"><input type="submit" class="button" name="submit" value="ADD"></td>
+				</tr>
+		</table>
+	{% endif %}
+
+
+
+	<br><table align="center" border="2" id="table"></br>
+		<h2 align="center" style="color: white;">Parents details </h2>
+		<thead>
+		<tr><br>
+			<th>Sl No.</th>
+			<th>Bus Name</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>House Name</th>
+			<th>Place</th>
+			<th>Phone</th></br>
+	</tr>
+	</thead>
+	<tbody>
+		{% for row in data['aayas']%}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{row['first_name']}}</td>
+		<td>{{row['last_name']}}</td>
+		<td>{{row['house_name']}}</td>
+		<td>{{row['place']}}</td>
+		<td>{{row['phone']}}</td>
+		<!-- <td><a href="?action=delete&id={{row['parent_id']}}">Delete</a></td> -->
+		<!-- <td><a href="?action=update&id={{row['parent_id']}}">Update</a></td> -->
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+	</form>
+	</center>
+{% include'footer.html'%}
